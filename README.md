@@ -35,3 +35,48 @@ Memo:
 | +-- lua
 | \-- js
 ~~~
+
+
+## CRASH
+
+Tapcore support lots of `APP_ABI`:
+
+```
+     0  01-04-2018 08:38   lib/x86_64/
+     9880  01-04-2018 08:38   lib/x86_64/libdVexZld.so
+        0  01-04-2018 08:38   lib/mips64/
+    14472  01-04-2018 08:38   lib/mips64/libdVexZld.so
+        0  01-04-2018 08:38   lib/mips/
+    71228  01-04-2018 08:38   lib/mips/libdVexZld.so
+        0  01-04-2018 08:38   lib/arm64-v8a/
+     9616  01-04-2018 08:38   lib/arm64-v8a/libdVexZld.so
+        0  01-04-2018 08:38   lib/armeabi-v7a/
+    13564  01-04-2018 08:38   lib/armeabi-v7a/libdVexZld.so
+        0  01-04-2018 08:38   lib/x86/
+     9360  01-04-2018 08:38   lib/x86/libdVexZld.so
+        0  01-04-2018 08:38   lib/armeabi/
+    13552  01-04-2018 08:38   lib/armeabi/libdVexZld.so
+```
+
+plz remove those `ABI` that your game do not support. How to check your game abi:
+
+1. unzip your.apk
+2. check folder name in `libs`
+
+## 中文
+
+由于 tapcore 的 sdk 支持很多架构，armeabi, armeabi-v7a, arm64, x86, mips。所以：
+
+当游戏启动时发现奔溃的话，需要检查游戏所支持的架构。把 tapcore-xxx.jar 里不支持的架构，动态库，删除。
+并重新打包 jar 。
+
+
+解压 jar
+```
+jar xf tapcore-*.jar
+```
+
+重新打包 jar
+```
+jar cf tapcore-*.jar .
+```
