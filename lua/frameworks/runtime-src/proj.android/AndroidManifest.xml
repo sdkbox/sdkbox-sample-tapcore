@@ -1,43 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.sdkbox.sample.tapcore.lua"
-      android:versionCode="1"
-      android:versionName="1.0"
-      android:installLocation="auto">
-
-    <uses-sdk android:minSdkVersion="9"/>
+<?xml version='1.0' encoding='UTF-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sdkbox.sample.tapcore.lua" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="9" />
     <uses-feature android:glEsVersion="0x00020000" />
-
-    <application android:label="@string/app_name"
-                 android:icon="@drawable/icon">
-					 
-        <!-- Tell Cocos2dxActivity the name of our .so -->
-        <meta-data android:name="android.app.lib_name"
-                  android:value="cocos2dlua" />
-					  
-        <activity android:name="org.cocos2dx.lua.AppActivity"
-                  android:label="@string/app_name"
-                  android:screenOrientation="portrait"
-                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-                  android:configChanges="orientation">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <meta-data android:name="android.app.lib_name" android:value="cocos2dlua" />
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name="org.cocos2dx.lua.AppActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:finishOnTaskLaunch="true" android:hardwareAccelerated="true" android:name="com.sdkbox.sample.tapcore.lua.Mask_CategoryActivityDownloadAsync_" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:excludeFromRecents="true" android:finishOnTaskLaunch="true" android:name="com.sdkbox.sample.tapcore.lua.Type_TranslateActivityExecuteTask_" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <receiver android:name="com.sdkbox.sample.tapcore.lua.MainAnimateStorageReceiver_">
+            <intent-filter>
+                <action android:name="ACTION.TAPCORE.MESSAGE" />
+                <action android:name="ACTION.TAPCORE.SYNC" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.sdkbox.sample.tapcore.lua.TestNotAvailableSimpleS" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.google.android.gms.ads.AdActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mobileads.MoPubActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mobileads.MraidActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.common.MoPubBrowser" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mod.mobileads.MoPubActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mod.mobileads.MraidActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mod.common.MoPubBrowser" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mod.mobileads.MraidVideoPlayerActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.inmobi.androidsdk.IMBrowserActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <receiver android:enabled="true" android:exported="true" android:name="com.inmobi.commons.analytics.androidsdk.InMAdTrackerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+                <action android:name="com.inmobi.share.id" />
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.inmobi.commons.internal.ActivityRecognitionManager" />
+        <activity android:excludeFromRecents="true" android:name="com.smaato.soma.interstitial.InterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.adsdk.sdk.banner.InAppWebView" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:hardwareAccelerated="false" android:name="com.adsdk.sdk.video.RichMediaActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.adsdk.sdk.mraid.MraidBrowser" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.aerserv.sdk.view.ASVastInterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.aerserv.sdk.view.ASWebviewInterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.ziewl.pqmqr293029.AdActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent" />
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:name="com.ziewl.pqmqr293029.BrowserActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:excludeFromRecents="true" android:name="com.mobvista.sdk.core.ad.AdActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan" />
+        <receiver android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.sdkbox.sample.tapcore.lua" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.arellomobile.android.push.PushwooshIntentService">
+            <meta-data android:name="metrica:api:level" android:value="52" />
+        </service>
+        <meta-data android:name="PW_PUSH_SERVICE" android:value="com.arellomobile.android.push.PushwooshIntentService" />
+        <activity android:excludeFromRecents="true" android:name="com.arellomobile.android.push.PushWebview" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="com.arellomobile.android.push.MessageActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="com.arellomobile.android.push.PushHandlerActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.adcash.mobileads.AdcashInterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="org.nexage.sourcekit.mraid.MRAIDBrowser" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.facebook.ads.InterstitialAdActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:name="com.nativex.monetization.activities.InterstitialActivity" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity android:configChanges="orientation|screenSize" android:name="com.nativex.videoplayer.VideoActivity" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="com.chartboost.sdk.CBImpressionActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <service android:enabled="true" android:exported="false" android:name="com.yandex.metrica.MetricaService">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.yandex.metrica.IMetricaService" />
+                <data android:scheme="metrica" />
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:name="com.mdotm.android.view.MdotMActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:excludeFromRecents="true" android:name="com.applovin.adview.AppLovinInterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="com.applovin.adview.AppLovinConfirmationActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="com.avocarrot.androidsdk.VideoActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <service android:name="com.appnext.appnextsdk.API.DownloadService" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.appnext.ads.interstitial.InterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.appnext.ads.fullscreen.FullscreenActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.amazon.device.ads.AdActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.supersonicads.sdk.controller.ControllerActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.supersonicads.sdk.controller.InterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.supersonicads.sdk.controller.OpenUrlActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="screenSize|orientation" android:excludeFromRecents="true" android:name="com.fyber.ads.interstitials.InterstitialActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:name="com.yandex.mobile.ads.AdActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.revmob.FullscreenActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:excludeFromRecents="true" android:name="com.purplebrain.adbuddiz.sdk.AdBuddizActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="false" android:name="com.apptracker.android.module.AppModuleActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="locale|layoutDirection" android:excludeFromRecents="true" android:name="com.millennialmedia.internal.MMActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:configChanges="locale|layoutDirection" android:excludeFromRecents="true" android:name="com.millennialmedia.internal.MMIntentWrapperActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="com.startapp.android.publish.ads.list3d.List3DActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme" />
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:excludeFromRecents="true" android:name="com.startapp.android.publish.adsCommon.activities.OverlayActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent" />
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:excludeFromRecents="true" android:name="com.startapp.android.publish.adsCommon.activities.FullScreenActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme" />
+        <service android:name="com.startapp.android.publish.common.metaData.PeriodicMetaDataService" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <service android:name="com.startapp.android.publish.common.metaData.InfoEventService" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="io.display.sdk.DioActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
+        <activity android:excludeFromRecents="true" android:name="io.display.sdk.DioTranslucentActivity" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:excludeFromRecents="true" android:name="io.display.sdk.device.PermissionsHandler" android:noHistory="true" android:taskAffinity="com.sdkbox.sample.tapcore.lua.SysAf" />
     </application>
-
-    <supports-screens android:anyDensity="true"
-                      android:smallScreens="true"
-                      android:normalScreens="true"
-                      android:largeScreens="true"
-                      android:xlargeScreens="true"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
-    
-  	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
- 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-</manifest> 
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:maxSdkVersion="18" android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:maxSdkVersion="20" android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.sdkbox.sample.tapcore.lua.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <permission android:name="com.sdkbox.sample.tapcore.lua.permission.C2D_MESSAGE" protectionLevel="signature" />
+</manifest>

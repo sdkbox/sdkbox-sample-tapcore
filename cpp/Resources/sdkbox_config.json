@@ -1,0 +1,12 @@
+{
+    "android": {
+        "Tapcore": {
+            "debug": true
+        }
+    }, 
+    "ios": {
+        "Tapcore": {
+            "debug": true
+        }
+    }
+}
