@@ -63,6 +63,16 @@ plz remove those `ABI` that your game do not support. How to check your game abi
 1. unzip your.apk
 2. check folder name in `libs`
 
+### unpack the tapcore-xx.jar
+```
+jar xf tapcore-*.jar
+```
+
+### re-pack the tapcore-xx.jar
+```
+jar cf tapcore-*.jar .
+```
+
 ## 中文
 
 由于 tapcore 的 sdk 支持很多架构，armeabi, armeabi-v7a, arm64, x86, mips。所以：
