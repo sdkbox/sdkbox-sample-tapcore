@@ -1,7 +1,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #ifdef SDKBOX_ENABLED
-#include "Plugin$(SDKBOX_PLUGIN_NAME)/Plugin$(SDKBOX_PLUGIN_NAME).h"
+#include "PluginTapcore/PluginTapcore.h"
 #endif
 
 USING_NS_CC;
@@ -27,7 +27,7 @@ void AppDelegate::initGLContextAttrs()
 
 bool AppDelegate::applicationDidFinishLaunching() {
 #ifdef SDKBOX_ENABLED
-    sdkbox::Plugin$(SDKBOX_PLUGIN_NAME)::init();
+    sdkbox::PluginTapcore::init();
 #endif
     // initialize director
     auto director = Director::getInstance();
