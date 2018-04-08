@@ -12,8 +12,7 @@
 #include "js_module_register.h"
 #endif
 #ifdef SDKBOX_ENABLED
-#include "Plugin$(SDKBOX_PLUGIN_NAME)JS.hpp"
-#include "Plugin$(SDKBOX_PLUGIN_NAME)JSHelper.h"
+#include "PluginTapcoreJS.hpp"
 #endif
 
 USING_NS_CC;
@@ -75,8 +74,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     js_module_register();
     ScriptingCore* sc = ScriptingCore::getInstance();
 #ifdef SDKBOX_ENABLED
-    sc->addRegisterCallback(register_all_Plugin$(SDKBOX_PLUGIN_NAME)JS);
-    sc->addRegisterCallback(register_all_Plugin$(SDKBOX_PLUGIN_NAME)JS_helper);
+    sc->addRegisterCallback(register_all_PluginTapcoreJS);
 #endif
     sc->start();
     sc->runScript("script/jsb_boot.js");
